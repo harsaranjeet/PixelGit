@@ -19,3 +19,4 @@ deployments:
       - "produção"
       - "продакшн"
       - "PROD-*"
+      - "hk"
