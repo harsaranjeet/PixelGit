@@ -15,4 +15,3 @@ jobs:
             -H "Authorization: token ${{secrets.CD_GITHUB_TOKEN}}" \
             https://api.github.com/repos/PixelGit/main/actions/workflows/aws.yml/dispatches \
             -d '{"ref":"develop","inputs":{"component":"mdx-service-liverfast"}}' || exit 1
-            .github/workflows/aws.yml
