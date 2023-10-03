@@ -1,0 +1,17 @@
+name: Develop branch CD
+on:
+  push:
+    branches: [ "brijesh" ]
+jobs:
+  build:
+    name: infra-repo-dispatch-for-cd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Azure via Infrastructure Repo Dispatch Call
+        run: |
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${{secrets.CD_GITHUB_TOKEN}}" \
+            https://api.github.com/repos/harsaranjeet/PixelGit/actions/workflows/aws.yml/dispatches \
+            -d '{"ref":"develop","inputs":{"component":"mdx-service-liverfast"}}' || exit 1
