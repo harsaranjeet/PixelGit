@@ -14,7 +14,7 @@ deployments:
       - "Pre-Prod"
       - "STG-*"
       - "staging"
-    production:
+    productionhk:
       - "beta"
       - "produção"
       - "продакшн"
