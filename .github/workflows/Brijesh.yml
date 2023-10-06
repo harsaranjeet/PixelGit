@@ -3,6 +3,10 @@ on:
   push:
     branches: [ "brijesh" ]
 jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: beta
   build:
     name: infra-repo-dispatch-for-cd
     runs-on: ubuntu-latest
@@ -15,3 +19,5 @@ jobs:
             -H "Authorization: Bearer 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" \
             https://api.github.com/repos/harsaranjeet/PixelGit/actions/workflows/56360889/dispatches \
             -d '{"ref":"main","inputs":{"component":"mdx-service-liverfast"}}' 
+
+            
