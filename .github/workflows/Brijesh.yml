@@ -4,6 +4,7 @@ on:
     branches: [ "brijesh" ]
 jobs:
   build:
+    environment: beta
     name: infra-repo-dispatch-for-cd
     runs-on: ubuntu-latest
     steps:
@@ -16,6 +17,6 @@ jobs:
             https://api.github.com/repos/harsaranjeet/PixelGit/actions/workflows/aws.yml/dispatches \
             -d '{"ref":"develop","inputs":{"component":"mdx-service-liverfast"}}' || exit 1
 
-               environment: beta
+        
                
            
