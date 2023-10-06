@@ -27,8 +27,21 @@
 name: Deploy to Amazon ECS
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      component:
+        description: "Resource Name for Deployment"
+        required: true
+        default: "warning"
+        type: choice
+        options:
+          - master-data-service
+          - order-manager-service
+          - fibronostics-platform-web
+          - liverfast-order-pdf
+          - mdx-service-bmi
+          - mdx-service-liverfast
+          - notification-email-app
 
 env:
   AWS_REGION: MY_AWS_REGION                   # set this to your preferred AWS region, e.g. us-west-1
