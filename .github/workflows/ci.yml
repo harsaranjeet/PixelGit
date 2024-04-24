@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - users: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Run a one-line script
         run: echo hello 
@@ -23,7 +23,7 @@ deploy-test:
   environment: test
   needs: [build]
   steps:
-    - users: actions/checkout@v4
+    - uses: actions/checkout@v4
 
     - name: eploy to test
       run: echo 'deploy test'
@@ -33,7 +33,7 @@ deploy-prod:
   envrionment: prod
   needs: [deploy-test]
   steps:
-    - users: action/achekout@v4
+    - uses: action/achekout@v4
 
     - name: deploy to prod
       run: echo 'deploy prod'
