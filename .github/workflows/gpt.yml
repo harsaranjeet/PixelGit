@@ -22,6 +22,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: production
     steps:
     - name: Deploy to Production
       run: echo 'deploy prod'
